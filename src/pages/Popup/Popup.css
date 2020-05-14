@@ -1,0 +1,549 @@
+.App {
+  text-align: center;
+}
+.App,
+#app-container,
+#extension {
+  width: 100%;
+  height: 100%;
+}
+.App-header {
+  background-color: #282c34;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-size: calc(10px + 2vmin);
+  color: white;
+}
+
+.App-link {
+  color: #61dafb;
+}
+
+@keyframes App-logo-spin {
+  from {
+    transform: rotate(0deg);
+  }
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+body {
+  color: #fff;
+  background: #111;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  width: 765px;
+  height: 600px;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+#dev-toggler {
+  right: 25px;
+}
+body > div#extension {
+  margin-top: 40px;
+  overflow-y: auto;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  align-items: center;
+  min-height: 520px;
+}
+div#menu {
+  position: fixed;
+  background-color: #800000;
+  width: 100%;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  height: 40px;
+  overflow: hidden;
+  z-index: 100;
+}
+div#menu .menu-placeholder {
+  border-bottom: 2px solid #fff;
+  min-width: 30px;
+  height: 40px;
+}
+div#menu .menu-placeholder.rest {
+  flex: 1;
+  line-height: 40px;
+  text-align: right;
+  padding-right: 10px;
+  font-weight: 700;
+}
+div#menu .menu-item {
+  background-color: #666;
+  border: 2px solid #bbb;
+  border: 2px solid #fff;
+  border-radius: 10px 10px 0 0;
+  width: 100px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  margin-right: -2px;
+  transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
+}
+div#menu .menu-item.active {
+  background-color: #111;
+  border: 2px solid #fff;
+  border-bottom: 2px solid transparent;
+  font-weight: 700;
+  transition: background-color 0.15s ease-out, border-color 0.15s ease-out;
+}
+div#menu .menu-item:not(.active) {
+  cursor: pointer;
+}
+div#menu .menu-item:not(.active):hover {
+  background-color: #111;
+  border-color: #fff;
+  transition: background-color 0.15s ease-out, border-color 0.15s ease-out;
+}
+div#menu #settings.menu-item {
+  display: none;
+}
+body * {
+  box-sizing: border-box;
+  outline: none;
+}
+.scroll4::-webkit-scrollbar {
+  width: 8px;
+}
+
+.scroll4::-webkit-scrollbar-thumb {
+  background: #bbb;
+  border-radius: 16px;
+}
+
+.scroll4::-webkit-scrollbar-track {
+  background: #666;
+  border-radius: 16px;
+}
+
+h1 {
+  margin-bottom: 2rem;
+  text-align: center;
+}
+a:any-link {
+  text-decoration: none;
+}
+h1 a:any-link {
+  text-decoration: underline;
+}
+select {
+  background-color: #333;
+  color: #fff;
+  height: 30px;
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  width: 740px;
+  padding-top: 40px;
+  margin: 0 auto;
+}
+.globals-wrapper {
+  width: 400px;
+  display: flex;
+  margin: 0 auto;
+  position: relative;
+}
+.container:first-child {
+  margin-top: 5rem;
+}
+.globals-wrapper li {
+  position: absolute;
+  left: 0.7rem;
+  top: -1rem;
+  font-size: 4.5rem;
+  color: #333;
+  transition: color 0.25s ease-in-out;
+}
+.globals-wrapper li.online {
+  color: #00ff00;
+}
+.globals-wrapper li.offline {
+  color: #ff0000;
+}
+.globals-wrapper .globalInput {
+  flex: 1;
+  line-height: 1.5rem;
+  box-sizing: border-box;
+  text-align: center;
+  height: 40px;
+  border-radius: 20px;
+  background: #333;
+  color: #fff;
+  border: 2px solid #666;
+  margin-top: 0.5rem;
+}
+#inputIP {
+  border: 2px solid #666;
+}
+#inputIP.and-dev {
+  border-radius: 20px 0 0 20px;
+}
+button {
+  color: #fff;
+  background-color: #800000;
+  border: none;
+  cursor: pointer;
+  border: 2px solid #666;
+  border-left-width: 0;
+  padding-right: 10px;
+  border-radius: 20px;
+  transition: all 0.25s ease-out;
+  margin-top: 0.5rem;
+  height: 40px;
+}
+.globals-wrapper button {
+  border-radius: 0 20px 20px 0;
+}
+button:hover {
+  color: #000;
+  background-color: #fff;
+  transition: all 0.15s ease-in;
+}
+.settings-row {
+  margin: 1.5rem auto 0 auto;
+  display: flex;
+  justify-content: space-between;
+}
+.settings-row > label {
+  width: 200px;
+}
+.effect {
+  display: flex;
+  width: 400px;
+  margin: 0 auto;
+  justify-content: space-between;
+  margin-top: 0.5rem;
+  flex-direction: column;
+  flex-direction: column;
+  border: 2px solid #666;
+  border-radius: 20px;
+  transition: border-color 0.25s ease-out;
+}
+.effect:hover {
+  border-color: #fff;
+  cursor: pointer;
+  transition: border-color 0.15s ease-in;
+}
+.effect.active {
+  border-color: #0dbedc;
+  cursor: pointer;
+  transition: border-color 0.15s ease-in;
+}
+.effect.show {
+  width: 100%;
+}
+.effect.show .settings-row-group.floating {
+  border-radius: 50px;
+}
+.effect:first-child {
+  border: 3px solid #800000;
+}
+.effect .title {
+  cursor: pointer;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  position: relative;
+  text-align: center;
+}
+.effect .title > a {
+  flex: 1;
+  padding: 0.7rem 0.5rem 0.7rem 0.5rem;
+}
+.effect .title > div:not(.settingsButton) {
+  flex: 1;
+}
+
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  position: absolute;
+  bottom: 0;
+  background-color: #800000;
+  color: white;
+  border: 2px solid white;
+  height: 30px;
+  width: 30px;
+  border-radius: 50%;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+.button:hover {
+  background-color: white;
+  color: #800000;
+  border: 2px solid #800000;
+  transition: all 0.15s ease-in;
+}
+.deleteButton {
+  left: 10px;
+  top: 4px;
+}
+
+.shareButton {
+  left: 60px;
+  top: 4px;
+}
+.shareButton:hover {
+  background-color: white;
+  color: #800000;
+  border: 2px solid #800000;
+  transition: all 0.15s ease-in;
+}
+
+.settingsButton {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  transition: border-color 0.25s ease-out;
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 5px;
+}
+.settingsButton:hover .chevron-arrow {
+  border-color: #fff;
+  transition: border-color 0.15s ease-in;
+}
+.effect .title .title-url {
+  text-transform: capitalize;
+}
+.settings-row-group {
+  display: flex;
+  align-items: center;
+}
+.settings-row-group.floating {
+  position: relative;
+  padding: 1rem 0.7rem 0.7rem 0.7rem;
+  border: 2px solid #666;
+  border-radius: 20px;
+}
+.settings-row-group.floating.slim {
+  padding: 0rem 0.7rem;
+}
+.mw205 {
+  min-width: 110px;
+  margin-right: 10px;
+}
+.mw100 {
+  min-width: 100%;
+}
+.ml1 {
+  margin-left: 1rem;
+}
+.settings-row-group.floating label.floating {
+  position: absolute;
+  top: -0.7rem;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #111;
+  padding: 0 0.5rem;
+  display: flex;
+  font-variant: all-small-caps;
+}
+.settings-row-group.floating i {
+  color: #666;
+}
+.settings-row-group.floating i.active {
+  color: #fff;
+}
+input.time {
+  width: 100%;
+}
+
+.settings-row a.url {
+  word-break: break-word;
+}
+.settings {
+  display: none;
+  padding: 0 10px 10px 10px;
+}
+.settings.show {
+  display: block;
+}
+textarea,
+input[type='password'],
+input[type='text'],
+input[type='number'] {
+  background: #333;
+  color: #fff;
+  border: 1px solid #333;
+  height: 30px;
+  border-radius: 20px;
+  padding-left: 10px;
+  padding-right: 10px;
+  transition: border-color 0.25s ease-out;
+}
+input[type='text'] {
+  border-radius: 20px;
+}
+input[type='number'] {
+  text-align: center;
+}
+input[type='text']:focus,
+input[type='number']:focus {
+  border-color: #fff;
+  transition: border-color 0.15s ease-in;
+}
+a:any-link {
+  color: white;
+}
+#hiddenFrame {
+  width: 0px;
+  height: 0px;
+  position: absolute;
+  left: -5px;
+  top: -5px;
+}
+.chevron-arrow {
+  display: inline-block;
+  border-right: 4px solid #666;
+  border-bottom: 4px solid #666;
+  width: 10px;
+  height: 10px;
+  transform-origin: 50% 50%;
+  transition: transform 0.25s ease-in-out;
+}
+.chevron-arrow.down {
+  transform: rotate(45deg);
+}
+.chevron-arrow.up {
+  transform: rotate(225deg);
+}
+.countdown {
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+  position: absolute;
+  right: 50px;
+  border: 1px solid #fff;
+  border-radius: 4px;
+  padding: 0.2rem 0.7rem;
+  top: 6px;
+}
+.effect.active .countdown {
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
+}
+.floating-button {
+  position: fixed;
+  right: 85px;
+  top: 50px;
+  font-size: 1.4rem;
+  background-color: #800000;
+  color: white;
+  border: 2px solid white;
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  cursor: pointer;
+  transition: all 0.25s ease-out;
+}
+.floating-button:hover {
+  background-color: white;
+  color: #800000;
+  border: 2px solid #800000;
+  transition: all 0.15s ease-in;
+}
+
+.settings-row-group.floating.wrap > div {
+  flex-basis: 100%;
+  display: flex;
+  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+input[type='range'].brightStart,
+input[type='range'].brightEnd,
+input[type='range'].bright3 {
+  width: 100px;
+}
+@media (max-width: 739px) {
+  .container {
+    width: 400px;
+  }
+  .settings-row {
+    flex-direction: column;
+  }
+  .settings-row-group.floating {
+    margin-bottom: 1rem;
+  }
+  .settings-row-group.floating.wrap {
+    flex-wrap: wrap;
+  }
+  .settings-row-group.floating.wrap > div {
+    flex-basis: 100%;
+    display: flex;
+    margin: 10px 0;
+    align-items: center;
+    justify-content: center;
+  }
+  .effect.show .settings-row-group.floating {
+    border-radius: 15px;
+  }
+  select,
+  input[type='range'],
+  input[type='text'],
+  input[type='number'] {
+    flex: 1;
+  }
+
+  .ml1 {
+    margin-left: 0;
+  }
+}
+
+@media (max-width: 399px) {
+  .container {
+    width: 100%;
+  }
+  .globals-wrapper {
+    width: 100%;
+  }
+  .effect {
+    width: 100%;
+  }
+}
+
+#fxList {
+  width: 90px;
+}
+
+.dev {
+  opacity: 0.5;
+}
+.dev2 {
+  max-width: 400px;
+  margin: 0 auto;
+  text-align: center;
+}
+.dev2 textarea {
+  width: 100%;
+  height: 400px;
+  margin-top: 0.5rem;
+  resize: none;
+}
