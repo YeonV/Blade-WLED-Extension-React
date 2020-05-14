@@ -2,6 +2,23 @@
 
 Chrome Extension now on React starting with v0.7.x
 
+***not functional yet***
+
+### Features
+
+- Fully with react
+- State management handled by redux
+- Proper module isolation
+- Tested: send commands to wled sucessfully
+- Tested: Permissions seems to play nicely
+- Imported & partly fixed: Some views+ui-elements
+- Implemented internal state-handling
+
+### ToDo:
+- fix rest of UI
+- adopt functionality (scripts, handlers, ...)
+- after testing -> connect redux-store to chrome-(local/sync)-storage
+
 ---
 
 ## Before React:
