@@ -1,3 +1,11 @@
+:root {
+  --accent-color: #333;
+  --text-color: #fff;
+  --border-color-1: #fff;
+  --border-color-2: #666;
+  --background-color-1: #111;
+  --background-color-2: #666;
+}
 .App {
   text-align: center;
 }
@@ -7,33 +15,9 @@
   width: 100%;
   height: 100%;
 }
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
-
 body {
-  color: #fff;
-  background: #111;
+  color: var(--text-color, #fff);
+  background: var(--background-color-1, #111);
   display: flex;
   justify-content: flex-start;
   align-items: center;
@@ -62,7 +46,7 @@ body > div#extension {
 }
 div#menu {
   position: fixed;
-  background-color: #800000;
+  background-color: var(--accent-color, #800000);
   width: 100%;
   display: flex;
   justify-content: flex-start;
@@ -72,7 +56,7 @@ div#menu {
   z-index: 100;
 }
 div#menu .menu-placeholder {
-  border-bottom: 2px solid #fff;
+  border-bottom: 2px solid var(--border-color-1, #fff);
   min-width: 30px;
   height: 40px;
 }
@@ -82,11 +66,20 @@ div#menu .menu-placeholder.rest {
   text-align: right;
   padding-right: 10px;
   font-weight: 700;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+}
+div#menu .menu-placeholder.rest .button {
+  margin-left: 10px;
+  font-size: 0.7rem;
+  width: 25px;
+  height: 25px;
 }
 div#menu .menu-item {
-  background-color: #666;
+  background-color: var(--background-color-2, #666);
   border: 2px solid #bbb;
-  border: 2px solid #fff;
+  border: 2px solid var(--border-color-1, #fff);
   border-radius: 10px 10px 0 0;
   width: 100px;
   display: flex;
@@ -97,8 +90,8 @@ div#menu .menu-item {
   transition: background-color 0.25s ease-out, border-color 0.25s ease-out;
 }
 div#menu .menu-item.active {
-  background-color: #111;
-  border: 2px solid #fff;
+  background-color: var(--background-color-1, #111);
+  border: 2px solid var(--border-color-1, #fff);
   border-bottom: 2px solid transparent;
   font-weight: 700;
   transition: background-color 0.15s ease-out, border-color 0.15s ease-out;
@@ -107,10 +100,11 @@ div#menu .menu-item:not(.active) {
   cursor: pointer;
 }
 div#menu .menu-item:not(.active):hover {
-  background-color: #111;
-  border-color: #fff;
+  background-color: var(--background-color-1, #111);
+  border-color: var(--border-color-1, #fff);
   transition: background-color 0.15s ease-out, border-color 0.15s ease-out;
 }
+
 div#menu #settings.menu-item {
   display: none;
 }
@@ -128,7 +122,7 @@ body * {
 }
 
 .scroll4::-webkit-scrollbar-track {
-  background: #666;
+  background: var(--background-color-2, #666);
   border-radius: 16px;
 }
 
@@ -144,8 +138,9 @@ h1 a:any-link {
 }
 select {
   background-color: #333;
-  color: #fff;
+  color: var(--text-color, #fff);
   height: 30px;
+  margin-right: 10px;
 }
 .container {
   display: flex;
@@ -153,7 +148,10 @@ select {
   width: 740px;
   padding-top: 40px;
   margin: 0 auto;
+  overflow-y: auto;
+  height: 600px;
 }
+
 .globals-wrapper {
   width: 400px;
   display: flex;
@@ -171,6 +169,21 @@ select {
   color: #333;
   transition: color 0.25s ease-in-out;
 }
+.globals-wrapper div.status {
+  position: absolute;
+  left: 0;
+  top: 1.8rem;
+  font-size: 0.8rem;
+  color: #fff;
+  background-color: #800000;
+  transition: color 0.25s ease-in-out;
+  padding: 0.35rem;
+  border-radius: 50%;
+  border: 2px solid #fff;
+}
+.globals-wrapper div.status.online {
+  background-color: green;
+}
 .globals-wrapper li.online {
   color: #00ff00;
 }
@@ -185,36 +198,12 @@ select {
   height: 40px;
   border-radius: 20px;
   background: #333;
-  color: #fff;
-  border: 2px solid #666;
+  color: var(--text-color, #fff);
+  border: 2px solid var(--border-color-2, #666);
   margin-top: 0.5rem;
 }
 #inputIP {
-  border: 2px solid #666;
-}
-#inputIP.and-dev {
-  border-radius: 20px 0 0 20px;
-}
-button {
-  color: #fff;
-  background-color: #800000;
-  border: none;
-  cursor: pointer;
-  border: 2px solid #666;
-  border-left-width: 0;
-  padding-right: 10px;
-  border-radius: 20px;
-  transition: all 0.25s ease-out;
-  margin-top: 0.5rem;
-  height: 40px;
-}
-.globals-wrapper button {
-  border-radius: 0 20px 20px 0;
-}
-button:hover {
-  color: #000;
-  background-color: #fff;
-  transition: all 0.15s ease-in;
+  border: 2px solid var(--border-color-2, #666);
 }
 .settings-row {
   margin: 1.5rem auto 0 auto;
@@ -224,6 +213,9 @@ button:hover {
 .settings-row > label {
   width: 200px;
 }
+#effectlist {
+  height: -webkit-fill-available;
+}
 .effect {
   display: flex;
   width: 400px;
@@ -232,14 +224,20 @@ button:hover {
   margin-top: 0.5rem;
   flex-direction: column;
   flex-direction: column;
-  border: 2px solid #666;
+  border: 2px solid var(--border-color-2, #666);
   border-radius: 20px;
   transition: border-color 0.25s ease-out;
 }
 .effect:hover {
-  border-color: #fff;
+  border-color: var(--border-color-1, #fff);
   cursor: pointer;
   transition: border-color 0.15s ease-in;
+}
+.effect .button {
+  opacity: 0.2;
+}
+.effect:hover .button {
+  opacity: 1;
 }
 .effect.active {
   border-color: #0dbedc;
@@ -252,9 +250,6 @@ button:hover {
 .effect.show .settings-row-group.floating {
   border-radius: 50px;
 }
-.effect:first-child {
-  border: 3px solid #800000;
-}
 .effect .title {
   cursor: pointer;
   display: flex;
@@ -263,10 +258,7 @@ button:hover {
   position: relative;
   text-align: center;
 }
-.effect .title > a {
-  flex: 1;
-  padding: 0.7rem 0.5rem 0.7rem 0.5rem;
-}
+
 .effect .title > div:not(.settingsButton) {
   flex: 1;
 }
@@ -278,7 +270,7 @@ button:hover {
   width: 40px;
   position: absolute;
   bottom: 0;
-  background-color: #800000;
+  background-color: var(--accent-color, #800000);
   color: white;
   border: 2px solid white;
   height: 30px;
@@ -290,24 +282,82 @@ button:hover {
 }
 .button:hover {
   background-color: white;
-  color: #800000;
-  border: 2px solid #800000;
+  color: var(--accent-color, #800000);
+  border: 2px solid var(--accent-color, #800000);
   transition: all 0.15s ease-in;
 }
-.deleteButton {
-  left: 10px;
-  top: 4px;
+.button.info {
+  background-color: transparent;
+  color: #fff;
+  border: 2px solid white;
+}
+.button.info:hover {
+  background-color: #fff;
+  color: #0dbedc;
+  border: #0dbedc;
+}
+.button.info.guide {
+  background-color: #0dbedc;
+  color: #fff;
+  border: 2px solid white;
+}
+.button.info.guide:hover {
+  background-color: #fff;
+  color: #0dbedc;
+  border: #0dbedc;
+}
+.button.info.yz {
+  background-color: #111;
+  color: green;
+  border: 2px solid green;
+}
+.button.info.yz:hover {
+  background-color: green;
+  color: #fff;
+  border: 2px solid #fff;
+}
+.button.info.guide.yz {
+  background-color: #fff;
+  color: green;
+  border: 2px solid green;
+}
+.button.info.guide.yz:hover {
+  background-color: green;
+  color: #fff;
+  border: 2px solid #fff;
 }
 
-.shareButton {
-  left: 60px;
+.effect-button-wrapper {
+  left: 10px;
   top: 4px;
+  display: flex;
+  position: absolute;
 }
-.shareButton:hover {
-  background-color: white;
-  color: #800000;
-  border: 2px solid #800000;
-  transition: all 0.15s ease-in;
+.effect-button-wrapper .button {
+  position: relative;
+  margin-right: 10px;
+}
+.deleteButton {
+  display: none;
+}
+.addButton {
+  position: relative;
+  margin: 20px auto;
+  width: 3rem;
+  height: 3rem;
+  font-size: 1.5rem;
+}
+.floating-button.preferences {
+  right: 10px;
+  opacity: 0;
+  transition: opacity 0.25s ease-out;
+}
+.floating-button.preferences:hover {
+  opacity: 1;
+  transition: opacity 0.15s ease-in;
+}
+.effect.show .deleteButton {
+  display: flex;
 }
 
 .settingsButton {
@@ -322,11 +372,13 @@ button:hover {
   bottom: 5px;
 }
 .settingsButton:hover .chevron-arrow {
-  border-color: #fff;
+  border-color: var(--border-color-1, #fff);
   transition: border-color 0.15s ease-in;
 }
 .effect .title .title-url {
   text-transform: capitalize;
+  flex: 1;
+  padding: 0.7rem 0.5rem 0.7rem 0.5rem;
 }
 .settings-row-group {
   display: flex;
@@ -334,44 +386,41 @@ button:hover {
 }
 .settings-row-group.floating {
   position: relative;
-  padding: 1rem 0.7rem 0.7rem 0.7rem;
-  border: 2px solid #666;
+  padding: 0.7rem;
+  border: 2px solid var(--border-color-2, #666);
   border-radius: 20px;
+  height: 57px;
+}
+.settings-row > *:not(:last-child) {
+  margin-right: 10px;
 }
 .settings-row-group.floating.slim {
   padding: 0rem 0.7rem;
-}
-.mw205 {
-  min-width: 110px;
-  margin-right: 10px;
-}
-.mw100 {
-  min-width: 100%;
-}
-.ml1 {
-  margin-left: 1rem;
 }
 .settings-row-group.floating label.floating {
   position: absolute;
   top: -0.7rem;
   left: 50%;
   transform: translateX(-50%);
-  background-color: #111;
+  background-color: var(--background-color-1, #111);
   padding: 0 0.5rem;
   display: flex;
   font-variant: all-small-caps;
 }
 .settings-row-group.floating i {
-  color: #666;
+  color: var(--background-color-2, #666);
 }
 .settings-row-group.floating i.active {
-  color: #fff;
+  color: var(--text-color, #fff);
+}
+:not(.globals-wrapper) > input {
+  margin-right: 10px;
 }
 input.time {
   width: 100%;
 }
 
-.settings-row a.url {
+.settings-row .url {
   word-break: break-word;
 }
 .settings {
@@ -381,12 +430,15 @@ input.time {
 .settings.show {
   display: block;
 }
+input[type='text'] {
+  flex: 1;
+}
 textarea,
 input[type='password'],
 input[type='text'],
 input[type='number'] {
   background: #333;
-  color: #fff;
+  color: var(--text-color, #fff);
   border: 1px solid #333;
   height: 30px;
   border-radius: 20px;
@@ -402,7 +454,7 @@ input[type='number'] {
 }
 input[type='text']:focus,
 input[type='number']:focus {
-  border-color: #fff;
+  border-color: var(--border-color-1, #fff);
   transition: border-color 0.15s ease-in;
 }
 a:any-link {
@@ -417,8 +469,8 @@ a:any-link {
 }
 .chevron-arrow {
   display: inline-block;
-  border-right: 4px solid #666;
-  border-bottom: 4px solid #666;
+  border-right: 4px solid var(--border-color-2, #666);
+  border-bottom: 4px solid var(--border-color-2, #666);
   width: 10px;
   height: 10px;
   transform-origin: 50% 50%;
@@ -435,7 +487,7 @@ a:any-link {
   transition: opacity 0.25s ease-out;
   position: absolute;
   right: 50px;
-  border: 1px solid #fff;
+  border: 1px solid var(--border-color-1, #fff);
   border-radius: 4px;
   padding: 0.2rem 0.7rem;
   top: 6px;
@@ -449,7 +501,7 @@ a:any-link {
   right: 85px;
   top: 50px;
   font-size: 1.4rem;
-  background-color: #800000;
+  background-color: var(--accent-color, #800000);
   color: white;
   border: 2px solid white;
   height: 50px;
@@ -465,15 +517,20 @@ a:any-link {
 }
 .floating-button:hover {
   background-color: white;
-  color: #800000;
-  border: 2px solid #800000;
+  color: var(--accent-color, #800000);
+  border: 2px solid var(--accent-color, #800000);
   transition: all 0.15s ease-in;
 }
 
-.settings-row-group.floating.wrap > div {
+.flexFirst > div:first-child {
   flex-basis: 100%;
   display: flex;
-  margin: 10px 0;
+  align-items: center;
+  justify-content: center;
+}
+.flexLast > div:last-child {
+  flex-basis: 100%;
+  display: flex;
   align-items: center;
   justify-content: center;
 }
@@ -481,6 +538,11 @@ input[type='range'].brightStart,
 input[type='range'].brightEnd,
 input[type='range'].bright3 {
   width: 100px;
+  flex: 1;
+}
+
+section[role='dialog'] {
+  z-index: 101;
 }
 @media (max-width: 739px) {
   .container {
@@ -492,10 +554,10 @@ input[type='range'].bright3 {
   .settings-row-group.floating {
     margin-bottom: 1rem;
   }
-  .settings-row-group.floating.wrap {
+  .settings-row-group.wrap {
     flex-wrap: wrap;
   }
-  .settings-row-group.floating.wrap > div {
+  .settings-row-group.wrap > div:first-child {
     flex-basis: 100%;
     display: flex;
     margin: 10px 0;
@@ -510,10 +572,7 @@ input[type='range'].bright3 {
   input[type='text'],
   input[type='number'] {
     flex: 1;
-  }
-
-  .ml1 {
-    margin-left: 0;
+    margin-right: 10px;
   }
 }
 

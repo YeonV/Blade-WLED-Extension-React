@@ -3,7 +3,12 @@ import './Options.css';
 
 class Options extends Component {
   render() {
-    return <div className="OptionsContainer">Options Page</div>;
+    return (
+      <div className="OptionsContainer">
+        <h1>Options Page</h1>
+        <p>WLED Extension: Coming soon...</p>
+      </div>
+    );
   }
 }
 

@@ -1,8 +1,8 @@
 import '../../assets/img/icon-128.png';
 import '../../assets/img/yz.png';
+import { useSelector } from 'react-redux';
 
 console.log('This is the background page.');
-console.log('Put the background !!!!!!!!scripts here.');
 window.chrome.tabs.onActivated.addListener(function (activeInfo) {
   window.chrome.tabs.get(activeInfo.tabId, function (tab) {
     console.log('This is the background page.');
@@ -23,7 +23,13 @@ window.chrome.runtime.onMessage.addListener(function (
 ) {
   console.log('GOT req', request);
   if (request.type === 'yz') {
-    console.log('GOT YZ');
+    chrome.browserAction.setIcon({ path: 'yz.png' });
+    const ip = useSelector((state) => state.app.ip);
+    console.log('GOT YZ', ip);
+    fetch(request.url);
+  }
+  if (request.type === 'yz2') {
+    console.log('GOT YZ2', request);
     fetch(request.url);
   }
   sendResponse();

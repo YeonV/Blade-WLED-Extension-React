@@ -107,8 +107,6 @@ const wledEffectsSlice = createSlice({
   ],
   reducers: {
     update(state, action) {
-      console.log('input: ', action.payload);
-      console.log('state: ', state);
       state.length = 0;
       state.push(...action.payload);
     },

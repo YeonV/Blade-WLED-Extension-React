@@ -2,48 +2,41 @@
 
 Chrome Extension now on React starting with v0.7.x
 
-***not functional yet***
-
-### Features
-
-- Fully with react
-- State management handled by redux
-- Proper module isolation
-- Tested: send commands to wled sucessfully
-- Tested: Permissions seems to play nicely
-- Imported & partly fixed: Some views+ui-elements
-- Implemented internal state-handling
-
-### ToDo:
-- fix rest of UI
-- adopt functionality (scripts, handlers, ...)
-- after testing -> connect redux-store to chrome-(local/sync)-storage
-
----
-
-## Before React:
-
-https://github.com/YeonV/Blade-WLED-Extension
-
-## Screenshot
-
 ![Image description](screenshot.png)
 
-| \#  | Function                      |
-| --- | ----------------------------- |
-| 1   | HTTP-API-Tester               |
-| 2   | JSON-API-Tester               |
-| 3   | Toggle Settings               |
-| 4   | Save Template                 |
-| 5   | Modify Template               |
-| 6   | Current effect countdown      |
-| 7   | Current effect active state   |
-| 8   | WLED Online/Offline state     |
-| 9   | Live Search Effects           |
-| 10  | Delete this effect            |
-| 11  | Share this effect on WLED-CMS |
-| 12  | Save current config.js\*      |
+## Features
+
+- Built with react
+- State management handled by redux & chrome-localStorage
+- HTTP-API Tester (incl. fully customizable FX-List)
+  - Active State
+  - Countdown on NL-Effects
+  - proper state-handling even on close/reopen
+- JSON-API Tester (incl. JSON-Editor)
+- InfoButton to toggle "Helper-Bubbles"
+  > please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
+
+## ToDo
+
+- Better define to which state to restore on "abort-Effect"
+- Maybe lock UI while info-bubbles opened or auto-close bubbles on next click
+- Start Project: WLED-CMS-Synergies
+
+## Notes
+
+- "add new effect"- and "IP"-inputs can also be confirmed with "Enter"-key
+- clicking the icon of an effect-parameter toggles the whole parameter (i.e. the sun-icon at the brightness sliders toggles if whole brightness-parameter)
 
 ---
 
+# Credits
+
+brother in arms and mentor: https://github.com/monestereo
+
+wled: https://github.com/Aircoookie/WLED
+
+wled's creator and community
+
 Extension's React-Base used: https://github.com/lxieyang/chrome-extension-boilerplate-react
+
+okok, that noob of past's Blade also did things... https://github.com/YeonV/Blade-WLED-Extension

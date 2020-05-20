@@ -1,6 +1,15 @@
-import { printLine } from './modules/print';
+console.log('test', document.querySelector('body').classList.add('yz'));
 
-console.log('Content script works!');
-console.log('Must reload extension for modifications to take effect.');
-
-printLine("Using the 'printLine' function from the Print Module");
+var anchors = document.querySelectorAll('article');
+for (let z = 0; z < anchors.length; z++) {
+  let elem = anchors[z];
+  elem.querySelector('.read-more').onclick = function () {
+    console.log('click', window.ip);
+    chrome.runtime.sendMessage({
+      type: 'yz',
+      url: `http://${window.ip}/win${elem
+        .querySelector('.entry-content')
+        .innerText.trim()}`,
+    });
+  };
+}
