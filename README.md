@@ -21,6 +21,7 @@ Chrome Extension now on React starting with v0.7.x
 - Better define to which state to restore on "abort-Effect"
 - Maybe lock UI while info-bubbles opened or auto-close bubbles on next click
 - Start Project: WLED-CMS-Synergies
+- Make use of the 'options/settings'-page inside chrome
 
 ## Notes
 
