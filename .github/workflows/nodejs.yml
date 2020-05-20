@@ -25,10 +25,10 @@ jobs:
       with:
         node-version: ${{ matrix.node-version }}
     - run: npm install -y
-    - run: npm run build
-    - run: cd build      
+    - run: npm run build 
     - name: Archive Release
       uses: thedoctor0/zip-release@master
       with:
         filename: 'release.zip'
+        path: 'build'
         exclusions: '*.git* /*node_modules/* .editorconfig'
