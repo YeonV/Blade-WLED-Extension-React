@@ -2,7 +2,7 @@
 
 Chrome Extension now on React starting with v0.7.x
 
-![Image description](screenshot.png)
+![Image description](http.png)
 
 ## Features
 
@@ -35,8 +35,8 @@ brother in arms and mentor: https://github.com/monestereo
 
 wled: https://github.com/Aircoookie/WLED
 
-wled's creator and community
+wled's creator Aircookie and the community
 
-Extension's React-Base used: https://github.com/lxieyang/chrome-extension-boilerplate-react
+extension's react-base used: https://github.com/lxieyang/chrome-extension-boilerplate-react
 
-okok, that noob of past's Blade also did things... https://github.com/YeonV/Blade-WLED-Extension
+okok, that noob of past's blade also did things... https://github.com/YeonV/Blade-WLED-Extension
