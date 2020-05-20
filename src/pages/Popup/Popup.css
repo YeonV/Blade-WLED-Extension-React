@@ -113,7 +113,7 @@ body * {
   outline: none;
 }
 .scroll4::-webkit-scrollbar {
-  width: 8px;
+  width: 6px;
 }
 
 .scroll4::-webkit-scrollbar-thumb {
@@ -145,10 +145,13 @@ select {
 .container {
   display: flex;
   flex-direction: column;
-  width: 740px;
+  width: 765px;
   padding-top: 40px;
-  margin: 0 auto;
+  margin: 0;
+  padding-left: 5px;
+  padding-right: 5px;
   overflow-y: auto;
+  overflow-x: hidden ;
   height: 600px;
 }
 
@@ -329,7 +332,7 @@ select {
 
 .effect-button-wrapper {
   left: 10px;
-  top: 4px;
+  top: 5px;
   display: flex;
   position: absolute;
 }

@@ -29,9 +29,7 @@ const StaticItem = (props) => {
         <div
           className="title-url"
           onClick={() => {
-            if (!active) {
-              onActivate();
-            }
+            onActivate();
             yz && console.log('Is Static');
           }}
         >
@@ -70,8 +68,8 @@ const StaticItem = (props) => {
           {...props}
         ></ItemDetails>
       ) : (
-        <></>
-      )}
+          <></>
+        )}
     </div>
   );
 };
