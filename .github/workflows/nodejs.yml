@@ -42,8 +42,8 @@ jobs:
         with:
           # tag_name: ${{ github.ref }}
           # release_name: Release ${{ github.ref }}
-          tag_name: 'v0.7.3'
-          release_name: 'BetaReleases'
+          tag_name: v0.7.3
+          release_name: BetaReleases
           draft: false
           prerelease: false
       - name: Upload Release Asset
