@@ -30,7 +30,7 @@ jobs:
         env:
           release_version: ${{ github.event.head_commit.message }}
         run: npm run build
-      - name: Prepare Archive
+      - name: Preparing Archive
         run: mv build Blade_WLED
       - name: Create Archive
         uses: thedoctor0/zip-release@master
