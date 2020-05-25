@@ -46,7 +46,7 @@ jobs:
         with:
           # tag_name: ${{ github.ref }}
           # release_name: Release ${{ github.ref }}
-          tag_name: ${{ github.run_number }}
+          tag_name: ${{ github.event.head_commit.message }}
           release_name: BetaRelease ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
