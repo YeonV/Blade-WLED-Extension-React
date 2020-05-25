@@ -12,7 +12,7 @@ name: Create Extension
 jobs:
   build:
     name: Build & Release Extension
-    if: "startsWith(github.event.head_commit.message, 'v0.').split(' |')[0]"
+    if: "startsWith(github.event.head_commit.message, 'v0.')"
     runs-on: ubuntu-latest
     strategy:
       matrix:
