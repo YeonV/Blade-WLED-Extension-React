@@ -34,6 +34,37 @@ click on the info-icon at the topper right corner.
 - "add new effect"- and "IP"-inputs can also be confirmed with "Enter"-key
 - clicking the icon of an effect-parameter toggles the whole parameter (i.e. the sun-icon at the brightness sliders toggles if whole brightness-parameter)
 
+---
+
+## Development
+
+```
+git clone https://github.com/YeonV/Blade-WLED-Extension-React.git
+cd Blade-WLED-Extension-React
+```
+
+---
+
+Starting DEV-Server (with hotReload):
+
+```
+yarn
+yarn start
+```
+
+=> use `build` folder as Chrome-Extension
+
+---
+
+Building Extension (Production):
+
+```
+yarn
+yarn build
+```
+
+=> use `build` folder as Chrome-Extension
+
 # Credits
 
 brother in arms and mentor: https://github.com/monestereo
