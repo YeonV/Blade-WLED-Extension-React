@@ -12,7 +12,7 @@ name: Create Extension
 jobs:
   build:
     name: Build & Release Extension
-    if: "startsWith(github.event.head_commit.message, 'v.0')"
+    if: "startsWith(github.event.head_commit.message, 'v0.')"
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -35,7 +35,7 @@ jobs:
       - name: Create Archive
         uses: thedoctor0/zip-release@master
         with:
-          filename: 'Blade_WLED_v0.7.${{ github.run_number }}.zip'
+          filename: 'Blade_WLED_${{ github.event.head_commit.message }}.zip'
           path: 'Blade_WLED'
           exclusions: '*.git* /*node_modules/* .editorconfig'
       - name: Create Release
@@ -46,8 +46,8 @@ jobs:
         with:
           # tag_name: ${{ github.ref }}
           # release_name: Release ${{ github.ref }}
-          tag_name: v0.7.${{ github.run_number }}
-          release_name: BetaRelease v0.7.${{ github.run_number }}
+          tag_name: ${{ github.run_number }}
+          release_name: BetaRelease ${{ github.event.head_commit.message }}
           draft: false
           prerelease: false
       - name: Upload Release Asset
@@ -57,8 +57,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }} # This pulls from the CREATE RELEASE step above, referencing it's ID to get its outputs object, which include a `upload_url`. See this blog post for more info: https://jasonet.co/posts/new-features-of-github-actions/#passing-data-to-future-steps 
-          asset_path: ./Blade_WLED_v0.7.${{ github.run_number }}.zip
-          asset_name: Blade_WLED_v0.7.${{ github.run_number }}.zip
+          asset_path: ./Blade_WLED_${{ github.event.head_commit.message }}.zip
+          asset_name: Blade_WLED_${{ github.event.head_commit.message }}.zip
           asset_content_type: application/zip
 
 
