@@ -26,7 +26,9 @@ jobs:
          node-version: ${{ matrix.node-version }}
       - name: Install Node Modules
         run: npm install -y
-      - name: Build project 
+      - name: Build project
+        env:
+          release_version: ${{ github.event.head_commit.message }}
         run: npm run build
       - name: Prepare Archive
         run: mv build Blade_WLED
