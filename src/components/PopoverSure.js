@@ -9,7 +9,12 @@ import {
   PopoverHeader,
 } from '@chakra-ui/core';
 
-export default function PopoverSure({ onConfirm }) {
+export default function PopoverSure({
+  onConfirm,
+  style,
+  icon = 'fa-fw far fa-trash-alt',
+  children,
+}) {
   const [isOpen, setIsOpen] = useState(false);
   const open = () => setIsOpen(true);
   const close = () => setIsOpen(false);
@@ -23,8 +28,12 @@ export default function PopoverSure({ onConfirm }) {
       closeOnBlur={false}
     >
       <PopoverTrigger color={'black'}>
-        <div className="button deleteButton">
-          <i className="icons">&#xe037;</i>
+        <div className="button deleteButton" style={style}>
+          <i
+            className={icon}
+            style={{ marginRight: children ? '1rem' : 0 }}
+          ></i>
+          {children}
         </div>
       </PopoverTrigger>
       <PopoverContent

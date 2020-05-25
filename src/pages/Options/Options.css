@@ -1,0 +1,72 @@
+:root {
+  --accent-color: #333;
+  --text-color: #fff;
+  --border-color-1: #fff;
+  --border-color-2: #666;
+  --background-color-1: #111;
+  --background-color-2: #666;
+}
+body {
+  color: var(--text-color, #fff);
+  background: var(--background-color-1, #111);
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+  overflow: hidden;
+  margin: 0;
+  font-size: 14px;
+  font-family: sans-serif;
+}
+body * {
+  box-sizing: border-box;
+}
+.OptionsContainer {
+  width: 600px;
+  margin: 0 auto;
+}
+.row {
+  display: flex;
+  align-items: center;
+  font-size: 1.5rem;
+  margin: 0.5rem 0;
+}
+.row select {
+  font-size: 1.5rem;
+  width: 300px;
+}
+.title {
+  width: 300px;
+}
+.button {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 40px;
+  background-color: var(--accent-color, #800000);
+  color: white;
+  border: 2px solid white;
+  width: 300px;
+  border-radius: 10px;
+  box-shadow: 1px 1px rgba(0, 0, 0, 0.9);
+  cursor: pointer;
+  font-size: smaller;
+  height: 35px;
+  transition: all 0.25s ease-out;
+}
+.button:hover {
+  background-color: white;
+  color: var(--accent-color, #800000);
+  border: 2px solid var(--accent-color, #800000);
+  transition: all 0.15s ease-in;
+}
+select {
+  background-color: #333;
+  color: var(--text-color, #fff);
+  height: 35px;
+  width: 300px;
+  outline: none;
+}

@@ -17,6 +17,9 @@ const EffectList = ({ effectList, effectLabels, palettesLabels, guide }) => {
 
   const openEffect = useSelector((state) => state.app.openEffect);
 
+  const effectsJson = useSelector((state) => state.effectsJson);
+  const { resetTo } = useSelector((state) => state.app);
+
   useEffect(() => {
     const currentEffect = effectList.find(({ name }) => name === activeEffect);
     if (currentEffect && currentEffect.useNL) {
@@ -45,7 +48,14 @@ const EffectList = ({ effectList, effectLabels, palettesLabels, guide }) => {
       },
       onReset: () => {
         yz && console.log('NOT same element');
-        setWledState(currentState, ip); // sent stored state to WLED
+        // setWledState(currentState, ip); // sent stored state to WLED
+        setWledState(
+          resetTo !== 'lastState'
+            ? effectsJson.find((ej) => ej.name === resetTo)
+            : currentState,
+          ip
+        ); // sent stored state to WLED
+
         dispatch(appActions.setActiveDuration(0));
         dispatch(appActions.setActiveEffect(''));
       },

@@ -9,7 +9,7 @@ import {
   PopoverHeader,
 } from '@chakra-ui/core';
 
-export default function PopoverAdd({ onConfirm, children }) {
+export default function PopoverAdd({ onConfirm, children, icon, style }) {
   const [isOpen, setIsOpen] = useState(false);
   const [newName, setNewName] = useState('');
   const open = () => setIsOpen(true);
@@ -24,10 +24,17 @@ export default function PopoverAdd({ onConfirm, children }) {
       placement="right"
       closeOnBlur={true}
       initialFocusRef={initialFocusRef}
+      icon={icon}
+      style={style}
     >
       <PopoverTrigger color={'black'}>
-        <div className="button addButton">
-          <i className="fa-fw fas fa-plus"></i>
+        <div className="button addButton" style={style}>
+          <i
+            className={icon ? icon : 'fa-fw fas fa-plus'}
+            style={{
+              marginRight: icon ? '0.5rem' : '0',
+            }}
+          ></i>
           {children}
         </div>
       </PopoverTrigger>

@@ -98,7 +98,10 @@ var options = {
                 description: process.env.npm_package_description,
                 version: process.env.npm_package_version,
                 ...JSON.parse(content.toString()),
-                version: process.env.release_version,
+                version:
+                  process.env.CI === true
+                    ? process.env.release_version
+                    : process.env.npm_package_version,
               })
             );
           },

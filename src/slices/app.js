@@ -14,6 +14,7 @@ const appSlice = createSlice({
     guide: false,
     online: false,
     yz: false,
+    resetTo: 'default',
   },
   reducers: {
     setIp(state, action) {
@@ -45,6 +46,9 @@ const appSlice = createSlice({
     },
     setYZ(state, action) {
       state.yz = action.payload;
+    },
+    setResetTo(state, action) {
+      state.resetTo = action.payload;
     },
     setAccentColor(state, action) {
       state.accentColor = action.payload;
