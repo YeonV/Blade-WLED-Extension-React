@@ -12,23 +12,27 @@ Chrome Extension now on React starting with v0.7.x
   - Active State
   - Countdown on NL-Effects
   - proper state-handling even on close/reopen
-- JSON-API Tester (incl. JSON-Editor)
+- JSON-API Tester (incl. JSON-Editor and Stored List)
 - InfoButton to toggle "Helper-Bubbles"
-  > please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
 
-## ToDo
+## Install
 
-- Better define to which state to restore on "abort-Effect"
-- Maybe lock UI while info-bubbles opened or auto-close bubbles on next click
-- Start Project: WLED-CMS-Synergies
-- Make use of the 'options/settings'-page inside chrome
+1. [Download Extension](https://github.com/YeonV/Blade-WLED-Extension-React/releases/download/v0.7.5/Blade_WLED_v0.7.5.zip) & unzip
+2. GoTo [Chrome Extensions](chrome://extensions)
+3. Toggle Developer mode -> Load unpacked -> select Folder
+
+![Chrome](chrome.png)
+
+## How To
+
+click on the info-icon at the topper right corner.
+
+> please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
 
 ## Notes
 
 - "add new effect"- and "IP"-inputs can also be confirmed with "Enter"-key
 - clicking the icon of an effect-parameter toggles the whole parameter (i.e. the sun-icon at the brightness sliders toggles if whole brightness-parameter)
-
----
 
 # Credits
 
