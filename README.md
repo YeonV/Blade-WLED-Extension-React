@@ -18,7 +18,7 @@ Chrome Extension now on React starting with v0.7.x
 ## Install
 
 1. [Download Extension](https://github.com/YeonV/Blade-WLED-Extension-React/releases/download/v0.7.5/Blade_WLED_v0.7.5.zip) & unzip
-2. GoTo [Chrome Extensions](chrome://extensions)
+2. GoTo Chrome-Extensions: `chrome://extensions`
 3. Toggle Developer mode -> Load unpacked -> select Folder
 
 ![Chrome](chrome.png)
