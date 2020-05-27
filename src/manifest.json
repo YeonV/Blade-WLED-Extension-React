@@ -1,18 +1,12 @@
 {
   "name": "Blade's API-Tester React",
   "description": "Blade's WLED HTTP/JSON API-Tester with React",
-  "version": "0.7.3",
+  "version": "0.7.7",
   "options_page": "options.html",
   "background": {
     "page": "background.html"
   },
-  "permissions": [
-    "activeTab",
-    "tabs",
-    "declarativeContent",
-    "storage",
-    "<all_urls>"
-  ],
+  "permissions": ["tabs", "storage"],
   "browser_action": {
     "default_popup": "popup.html",
     "default_icon": "icon-128.png"
@@ -22,12 +16,11 @@
   },
   "content_scripts": [
     {
-      "matches": ["http://*/*", "https://*/*", "<all_urls>"],
-      "js": ["contentScript.bundle.js"],
-      "css": ["content.styles.css"]
+      "matches": ["https://wled.yeonv.com/*", "http://localhost/*"],
+      "js": ["contentScript.bundle.js"]
     }
   ],
-  "web_accessible_resources": ["content.styles.css", "icon-128.png", "yz.png"],
+  "web_accessible_resources": ["icon-128.png", "yz.png"],
   "manifest_version": 2,
   "content_security_policy": "script-src 'self' 'unsafe-eval'; object-src 'self'"
 }

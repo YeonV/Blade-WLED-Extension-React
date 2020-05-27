@@ -311,21 +311,21 @@ select {
 }
 .button.info.yz {
   background-color: #111;
-  color: green;
-  border: 2px solid green;
+  color: #800000;
+  border: 2px solid #800000;
 }
 .button.info.yz:hover {
-  background-color: green;
+  background-color: #800000;
   color: #fff;
   border: 2px solid #fff;
 }
 .button.info.guide.yz {
   background-color: #fff;
-  color: green;
-  border: 2px solid green;
+  color: #800000;
+  border: 2px solid #800000;
 }
 .button.info.guide.yz:hover {
-  background-color: green;
+  background-color: #800000;
   color: #fff;
   border: 2px solid #fff;
 }
