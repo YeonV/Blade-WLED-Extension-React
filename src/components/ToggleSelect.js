@@ -6,7 +6,7 @@ export default function ToggleSelect({
   onChange,
   active,
   onToggle,
-  labels,
+  labels
 }) {
   return (
     <>
@@ -15,7 +15,7 @@ export default function ToggleSelect({
         style={{ marginRight: '0.5rem' }}
         onClick={onToggle}
       ></i>
-      <select onChange={onChange} value={value}>
+      <select onChange={onChange} value={value} >
         {labels.map((ele, i) => (
           <option key={i} onChange={() => {}} value={i}>
             {ele}

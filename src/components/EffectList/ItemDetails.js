@@ -184,6 +184,7 @@ export default function ItemDetails(props) {
                 props.name
               );
             }}
+            classes={"mr15"}
             active={props.useSX}
             onToggle={() => {
               props.onToggle('useSX', !props.useSX, props.name);

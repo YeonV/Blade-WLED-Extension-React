@@ -8,6 +8,7 @@ export default function ToggleSlider({
   onToggle,
   min = 0,
   max = 255,
+  classes
 }) {
   return (
     <>
@@ -17,7 +18,7 @@ export default function ToggleSlider({
         onClick={onToggle}
       ></i>
       <input
-        className="brightStart"
+        className={`brightStart ${classes}`}
         type="range"
         min={min}
         max={max}
