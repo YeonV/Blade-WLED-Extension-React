@@ -12,7 +12,7 @@ name: Create Extension
 jobs:
   build:
     name: Build & Release Extension
-    if: "startsWith(github.event.head_commit.message, 'v0.')"
+    if: "startsWith(github.event.head_commit.message, 'Release')"
     runs-on: ubuntu-latest
     strategy:
       matrix:
@@ -20,6 +20,9 @@ jobs:
     steps:
       - name: Checkout code
         uses: actions/checkout@v2
+      - name: get-npm-version
+        id: package-version
+        uses: martinbeentjes/npm-get-version-action@master
       - name: Use Node.js ${{ matrix.node-version }}
         uses: actions/setup-node@v1
         with:
@@ -46,8 +49,8 @@ jobs:
         with:
           # tag_name: ${{ github.ref }}
           # release_name: Release ${{ github.ref }}
-          tag_name: ${{ github.event.head_commit.message }}
-          release_name: BetaRelease ${{ github.event.head_commit.message }}
+          tag_name: ${{ steps.package-version.outputs.current-version}}
+          release_name: BetaRelease ${{ steps.package-version.outputs.current-version}}
           draft: false
           prerelease: false
       - name: Upload Release Asset
