@@ -2,6 +2,9 @@ import '../../assets/img/icon-128.png';
 import '../../assets/img/yz.png';
 import { useSelector } from 'react-redux';
 import { store, persistor } from '../../lib/create-store';
+import { actions as effectsActions } from '../../slices/effects';
+
+
 
 console.log('This is the background page.');
 window.chrome.tabs.onActivated.addListener(function (activeInfo) {
@@ -29,6 +32,17 @@ window.chrome.runtime.onMessage.addListener(function (
   if (request.type === 'yz2') {
     console.log('GOT YZ2', request);
     fetch(request.url);
-  }
+  }  
   sendResponse();
 });
+window.chrome.runtime.onMessageExternal.addListener(
+  function(request, sender, sendResponse) {
+    
+    if (request.type === "yz3") {
+      console.log('GOT YZ3', request.data);
+      store.dispatch(effectsActions.addEffect(request.data.name));
+      store.dispatch(effectsActions.updateEffect(request.data));
+      sendResponse();
+    }
+
+  });

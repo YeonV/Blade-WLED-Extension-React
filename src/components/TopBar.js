@@ -44,8 +44,9 @@ export default function TopBar() {
       />
 
       <div className="menu-placeholder rest">
-        {resetTo} Blade's WLED HTTP/JSON API-Tester -{' '}
+        Blade's WLED HTTP/JSON API-Tester -{' '}
         {process.env.REACT_APP_VERSION}
+        {process.env.NODE_ENV}
         <div
           className={`button info ${guide ? 'guide' : ''} ${yz ? 'yz' : ''}`}
           style={{
