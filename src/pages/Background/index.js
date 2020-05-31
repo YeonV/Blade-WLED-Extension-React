@@ -32,17 +32,22 @@ window.chrome.runtime.onMessage.addListener(function (
   if (request.type === 'yz2') {
     console.log('GOT YZ2', request);
     fetch(request.url);
+  } 
+  if (request.type === 'yz3') {
+    console.log('GOT YZ3', request);
+    store.dispatch(effectsActions.addEffect(request.data.name));
+    store.dispatch(effectsActions.updateEffect(request.data));
   }  
   sendResponse();
 });
-window.chrome.runtime.onMessageExternal.addListener(
-  function(request, sender, sendResponse) {
+// window.chrome.runtime.onMessageExternal.addListener(
+//   function(request, sender, sendResponse) {
     
-    if (request.type === "yz3") {
-      console.log('GOT YZ3', request.data);
-      store.dispatch(effectsActions.addEffect(request.data.name));
-      store.dispatch(effectsActions.updateEffect(request.data));
-      sendResponse();
-    }
+//     if (request.type === "yz3") {
+//       console.log('GOT YZ3 external', request.data);
+//       store.dispatch(effectsActions.addEffect(request.data.name));
+//       store.dispatch(effectsActions.updateEffect(request.data));
+//       sendResponse();
+//     }
 
-  });
+//   });
