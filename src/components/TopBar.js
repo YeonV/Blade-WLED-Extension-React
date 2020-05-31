@@ -2,6 +2,8 @@ import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
 import { actions as appActions } from '../slices/app';
 import PopoverInfo from './PopoverInfo';
+import packageJson from '../../package.json';
+
 
 const appSelector = (state) => state.app;
 
@@ -46,7 +48,7 @@ export default function TopBar() {
       <div className="menu-placeholder rest">
         Blade's WLED HTTP/JSON API-Tester -{' '}
         {process.env.REACT_APP_VERSION}
-        {process.env.NODE_ENV}
+        {packageJson.version}
         <div
           className={`button info ${guide ? 'guide' : ''} ${yz ? 'yz' : ''}`}
           style={{
