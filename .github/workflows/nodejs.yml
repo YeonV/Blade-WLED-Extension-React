@@ -31,7 +31,8 @@ jobs:
         run: npm install -y
       - name: Build project
         env:
-          release_version: ${{ github.event.head_commit.message }}
+          release_version: ${{ steps.package-version.outputs.current-version}}
+          REACT_APP_VERSION: ${{ steps.package-version.outputs.current-version}}
         run: npm run build
       - name: Preparing Archive
         run: mv build Blade_WLED
