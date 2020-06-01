@@ -1,6 +1,6 @@
 {
-  "name": "Blade's API-Tester React",
-  "description": "Blade's WLED HTTP/JSON API-Tester with React",
+  "name": "Blade's WLED API-Tester",
+  "description": "Blade's WLED Compainion including HTTP and JSON API-Tester",
   "options_page": "options.html",
   "background": {
     "page": "background.html"

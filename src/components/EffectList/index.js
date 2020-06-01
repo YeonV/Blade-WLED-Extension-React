@@ -61,7 +61,7 @@ const EffectList = ({ effectList, effectLabels, palettesLabels, guide }) => {
       },
       onActivate: () => {
         if (e.useNL) {
-          const endTime = new Date(Date.now() + e.timeInMin * 60000);
+          const endTime = new Date(Date.now() + e.NL * 60000);
           dispatch(appActions.setActiveDuration(endTime));
         }
         dispatch(appActions.setActiveEffect(e.name));

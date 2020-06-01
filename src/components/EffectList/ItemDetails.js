@@ -23,9 +23,9 @@ export default function ItemDetails(props) {
       <div className="settings-row flexLast">
         <InputGroup label={'Color1'} style={{ minWidth: 110 }}>
           <ToggleColor
-            value={props.cl}
+            value={props.CL}
             onChange={(e) => {
-              props.onChange('cl', e.target.value.replace('#', ''), props.name);
+              props.onChange('CL', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useCL}
             onToggle={() => {
@@ -43,9 +43,9 @@ export default function ItemDetails(props) {
           />
 
           <ToggleColor
-            value={props.c2}
+            value={props.C2}
             onChange={(e) => {
-              props.onChange('c2', e.target.value.replace('#', ''), props.name);
+              props.onChange('C2', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useC2}
             onToggle={() => {
@@ -62,9 +62,9 @@ export default function ItemDetails(props) {
 
         <InputGroup label={'Color3'}>
           <ToggleColor
-            value={props.c3}
+            value={props.C3}
             onChange={(e) => {
-              props.onChange('c3', e.target.value.replace('#', ''), props.name);
+              props.onChange('C3', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useC3}
             onToggle={() => {
@@ -94,9 +94,9 @@ export default function ItemDetails(props) {
         <InputGroup label={'Nightlight'}>
           <ToggleSelect
             icon={'fas fa-moon'}
-            value={props.nf}
+            value={props.NF}
             onChange={(e) => {
-              props.onChange('nf', e.target.value.replace('#', ''), props.name);
+              props.onChange('NF', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useNF}
             onToggle={() => {
@@ -108,10 +108,10 @@ export default function ItemDetails(props) {
         <InputGroup label={'Start'}>
           <ToggleSlider
             icon={'fas fa-sun'}
-            value={props.brightnessStart}
+            value={props.A}
             onChange={(e) => {
               props.onChange(
-                'brightnessStart',
+                'A',
                 e.target.value.replace('#', ''),
                 props.name
               );
@@ -125,10 +125,10 @@ export default function ItemDetails(props) {
         <InputGroup label={'End'}>
           <ToggleSlider
             icon={'fas fa-sun'}
-            value={props.brightnessEnd}
+            value={props.NT}
             onChange={(e) => {
               props.onChange(
-                'brightnessEnd',
+                'NT',
                 e.target.value.replace('#', ''),
                 props.name
               );
@@ -142,10 +142,10 @@ export default function ItemDetails(props) {
         <InputGroup label={'Time'}>
           <ToggleSlider
             icon={'fas fa-stopwatch'}
-            value={props.timeInMin}
+            value={props.NL}
             onChange={(e) => {
               props.onChange(
-                'timeInMin',
+                'NL',
                 e.target.value.replace('#', ''),
                 props.name
               );
@@ -164,9 +164,9 @@ export default function ItemDetails(props) {
         <InputGroup label={'FX'} style={{ flex: 1 }}>
           <ToggleSelect
             icon={'fas fa-magic'}
-            value={props.fx}
+            value={props.FX}
             onChange={(e) => {
-              props.onChange('fx', e.target.value.replace('#', ''), props.name);
+              props.onChange('FX', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useFX}
             onToggle={() => {
@@ -176,10 +176,10 @@ export default function ItemDetails(props) {
           />
           <ToggleSlider
             icon={'fas fa-stopwatch'}
-            value={props.fxSpeed}
+            value={props.SX}
             onChange={(e) => {
               props.onChange(
-                'fxSpeed',
+                'SX',
                 e.target.value.replace('#', ''),
                 props.name
               );
@@ -192,9 +192,9 @@ export default function ItemDetails(props) {
           />
           <ToggleSlider
             icon={'fas fa-tachometer-alt'}
-            value={props.ix}
+            value={props.IX}
             onChange={(e) => {
-              props.onChange('ix', e.target.value.replace('#', ''), props.name);
+              props.onChange('IX', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useIX}
             onToggle={() => {
@@ -205,9 +205,9 @@ export default function ItemDetails(props) {
         <InputGroup label={'PALETTE'}>
           <ToggleSelect
             icon={'fas fa-swatchbook'}
-            value={props.fp}
+            value={props.FP}
             onChange={(e) => {
-              props.onChange('fp', e.target.value.replace('#', ''), props.name);
+              props.onChange('FP', e.target.value.replace('#', ''), props.name);
             }}
             active={props.useFP}
             onToggle={() => {

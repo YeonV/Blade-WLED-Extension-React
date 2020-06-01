@@ -61,7 +61,7 @@ export default function Json() {
             </div>
           </div>
           <JSONInput
-            id="a_unique_id"
+            id="jsonEditor"
             placeholder={currentState}
             onChange={(e) => dispatch(appActions.setCurrentState(e.jsObject))}
             locale={locale}
@@ -71,7 +71,7 @@ export default function Json() {
                 width: 400,
                 textAlign: 'left',
                 marginTop: 10,
-                height: 'unset',
+                height: 'unset',                
               },
               container: {
                 width: 400,

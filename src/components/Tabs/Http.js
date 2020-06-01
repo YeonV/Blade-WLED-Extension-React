@@ -21,17 +21,17 @@ const effectWithUrlSelector = createSelector(
         return {
           ...effect,
           urlString: `http://${app.ip}/win${
-            effect.useFX ? `&FX=${effect.fx}` : ''
-          }${effect.useCL ? `&CL=h00${effect.cl.toUpperCase()}` : ''}${
-            effect.useC2 ? `&C2=h00${effect.c2.toUpperCase()}` : ''
-          }${effect.useC3 ? `&C3=h00${effect.c3.toUpperCase()}` : ''}${
-            effect.useA ? `&A=${effect.brightnessStart}` : ''
-          }${effect.useNL ? `&NL=${effect.timeInMin}` : ''}${
-            effect.useNT ? `&NT=${effect.brightnessEnd}` : ''
-          }${effect.useNF ? `&NF=${effect.nf}` : ''}${
-            effect.useFP ? `&FP=${effect.fp}` : ''
-          }${effect.useIX ? `&IX=${effect.ix}` : ''}${
-            effect.useSX ? `&SX=${effect.fxSpeed}` : ''
+            effect.useFX ? `&FX=${effect.FX}` : ''
+          }${effect.useCL ? `&CL=h00${effect.CL.toUpperCase()}` : ''}${
+            effect.useC2 ? `&C2=h00${effect.C2.toUpperCase()}` : ''
+          }${effect.useC3 ? `&C3=h00${effect.C3.toUpperCase()}` : ''}${
+            effect.useA ? `&A=${effect.A}` : ''
+          }${effect.useNL ? `&NL=${effect.NL}` : ''}${
+            effect.useNT ? `&NT=${effect.NT}` : ''
+          }${effect.useNF ? `&NF=${effect.NF}` : ''}${
+            effect.useFP ? `&FP=${effect.FP}` : ''
+          }${effect.useIX ? `&IX=${effect.IX}` : ''}${
+            effect.useSX ? `&SX=${effect.SX}` : ''
           }${effect.useEXTRA ? `${effect.extra}` : ''}`,
         };
       });

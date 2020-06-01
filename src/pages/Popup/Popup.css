@@ -112,18 +112,24 @@ body * {
   box-sizing: border-box;
   outline: none;
 }
+#jsonEditor::-webkit-scrollbar,
 .scroll4::-webkit-scrollbar {
   width: 6px;
 }
 
+#jsonEditor::-webkit-scrollbar-thumb,
 .scroll4::-webkit-scrollbar-thumb {
   background: #bbb;
   border-radius: 16px;
 }
 
+#jsonEditor::-webkit-scrollbar-track,
 .scroll4::-webkit-scrollbar-track {
   background: var(--background-color-2, #666);
   border-radius: 16px;
+}
+#jsonEditor-outer-box > div:first-child {
+  right: 10px !important;
 }
 
 h1 {
