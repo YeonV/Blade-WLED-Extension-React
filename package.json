@@ -1,7 +1,7 @@
 {
   "name": "blade-wled-react",
-  "version": "v0.7.13",
-  "description": "A chrome extension boilerplate built with React 16 and Webpack 4",
+  "version": "v0.8.0",
+  "description": "Blade's WLED Extension including HTTP and JSON API-Tester",
   "license": "MIT",
   "repository": {
     "type": "git",
