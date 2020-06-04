@@ -39,51 +39,16 @@ const parseParams = (querystring, effectname) => {
     obj['useC3'] = false;
     obj['C3'] = '000000';
   }
-  if (obj['FX']) {
-    obj['useFX'] = true;
-  } else {
-    obj['useFX'] = false;
-  }
-  if (obj['FP']) {
-    obj['useFP'] = true;
-  } else {
-    obj['useFP'] = false;
-  }
-  if (obj['IX']) {
-    obj['useIX'] = true;
-  } else {
-    obj['useIX'] = false;
-  }
-  if (obj['SX']) {
-    obj['useSX'] = true;
-  } else {
-    obj['useSX'] = false;
-  }
-  if (obj['NF']) {
-    obj['useNF'] = true;
-  } else {
-    obj['useNF'] = false;
-  }
-  if (obj['extra']) {
-    obj['useEXTRA'] = true;
-  } else {
-    obj['useEXTRA'] = false;
-  }
-  if (obj['NL']) {
-    obj['useNL'] = true;
-  } else {
-    obj['useNL'] = false;
-  }
-  if (obj['A']) {
-    obj['useA'] = true;
-  } else {
-    obj['useA'] = false;
-  }
-  if (obj['NT']) {
-    obj['useNT'] = true;
-  } else {
-    obj['useNT'] = false;
-  }
+  obj['useFX'] = !!obj['FX'];
+  obj['useFP'] = !!obj['FP'];
+  obj['useIX'] = !!obj['IX'];
+  obj['useSX'] = !!obj['SX'];
+  obj['useNF'] = !!obj['NF'];
+  obj['useEXTRA'] = !!obj['extra'];
+  obj['useNL'] = !!obj['NL'];
+  obj['useA'] = !!obj['A'];
+  obj['useNT'] = !!obj['NT'];
+
   return obj;
 };
 
