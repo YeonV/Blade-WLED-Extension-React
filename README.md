@@ -1,6 +1,7 @@
-# Blade's WLED HTTP/JSON API-Tester with React !!
+# Blade's WLED HTTP/JSON API-Tester 
+## *now in Chrome WebStore starting with v0.8.x!!*
 
-Chrome Extension now on React starting with v0.7.x
+During beta only available via this [link](https://chrome.google.com/webstore/detail/blades-wled-api-tester/foeecfbflpljollbdmemelnmmihmlglf)
 
 ![Image description](http.png)
 
@@ -15,55 +16,71 @@ Chrome Extension now on React starting with v0.7.x
 - JSON-API Tester (incl. JSON-Editor and Stored List)
 - InfoButton to toggle "Helper-Bubbles"
 
-## Install
+## Manual Install (git-release)
+<details>
+  <summary>Click to expand</summary>
+  
+  > git-releases can contain newer features, which are not published to store yet
+  
+  1. [Download Extension](https://github.com/YeonV/Blade-WLED-Extension-React/releases/latest/download/Blade_WLED.zip) & unzip
+  2. GoTo Chrome-Extensions: `chrome://extensions`
+  3. Toggle Developer mode -> Load unpacked -> select Folder
 
-1. [Download Extension](https://github.com/YeonV/Blade-WLED-Extension-React/releases/download/v0.7.5/Blade_WLED_v0.7.5.zip) & unzip
-2. GoTo Chrome-Extensions: `chrome://extensions`
-3. Toggle Developer mode -> Load unpacked -> select Folder
-
-![Chrome](chrome.png)
+  ![Chrome](chrome.png)
+</details>
 
 ## How To
+<details>
+  <summary>Click to expand</summary>
 
-click on the info-icon at the topper right corner.
+  click on the info-icon at the topper right corner.
 
-> please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
+  > please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
+</details>
 
 ## Notes
+<details>
+  <summary>Click to expand</summary>
 
-- "add new effect"- and "IP"-inputs can also be confirmed with "Enter"-key
-- clicking the icon of an effect-parameter toggles the whole parameter (i.e. the sun-icon at the brightness sliders toggles if whole brightness-parameter)
+  - "add new effect"- and "IP"-inputs can also be confirmed with "Enter"-key
+  - clicking the icon of an effect-parameter toggles the whole parameter (i.e. the sun-icon at the brightness sliders toggles if whole brightness-parameter)
+</details>
 
 ---
 
 ## Development
+<details>
+  <summary>Click to expand</summary>
 
-```
-git clone https://github.com/YeonV/Blade-WLED-Extension-React.git
-cd Blade-WLED-Extension-React
-```
+  > cloning the latest will contain chrome-release + git-release + non-released-commits
 
----
+  ```
+  git clone https://github.com/YeonV/Blade-WLED-Extension-React.git
+  cd Blade-WLED-Extension-React
+  ```
 
-Starting DEV-Server (with hotReload):
+  ---
 
-```
-yarn
-yarn start
-```
+  Starting DEV-Server (with hotReload):
 
-=> use `build` folder as Chrome-Extension
+  ```
+  yarn
+  yarn start
+  ```
 
----
+  => use `build` folder as Chrome-Extension
 
-Building Extension (Production):
+  ---
 
-```
-yarn
-yarn build
-```
+  Building Extension (Production):
 
-=> use `build` folder as Chrome-Extension
+  ```
+  yarn
+  yarn build
+  ```
+
+  => use `build` folder as Chrome-Extension
+</details>
 
 # Credits
 
