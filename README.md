@@ -5,7 +5,7 @@ During beta only available via this [link](https://chrome.google.com/webstore/de
 
 ![Image description](http.png)
 
-## Features
+### Features
 
 - Built with react
 - State management handled by redux & chrome-localStorage
@@ -16,7 +16,7 @@ During beta only available via this [link](https://chrome.google.com/webstore/de
 - JSON-API Tester (incl. JSON-Editor and Stored List)
 - InfoButton to toggle "Helper-Bubbles"
 
-## Manual Install (git-release)
+### Manual Install (git-release)
 <details>
   <summary>Click to expand</summary>
   
@@ -29,7 +29,7 @@ During beta only available via this [link](https://chrome.google.com/webstore/de
   ![Chrome](chrome.png)
 </details>
 
-## How To
+### How To
 <details>
   <summary>Click to expand</summary>
 
@@ -38,7 +38,7 @@ During beta only available via this [link](https://chrome.google.com/webstore/de
   > please don't use the app while helper-bubbles are opened, might lead to a visual bug. you can also repress the info-button after the visual-bug to fix it.
 </details>
 
-## Notes
+### Notes
 <details>
   <summary>Click to expand</summary>
 
@@ -48,7 +48,7 @@ During beta only available via this [link](https://chrome.google.com/webstore/de
 
 ---
 
-## Development
+### Development
 <details>
   <summary>Click to expand</summary>
 
